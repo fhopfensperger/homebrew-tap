@@ -12,26 +12,26 @@ class GitReleaser < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/fhopfensperger/git-releaser/releases/download/v0.0.99/git-releaser_0.0.99_darwin_amd64.tar.gz"
-      sha256 "426fea426ff4680e39db275020ced718e2228434ad897fa28241eb14db512d93"
+      sha256 "d41c40168ee5f7dc5e9cc7647a82530c44676bed292734bc4eb6e0fe1facac78"
     end
     if Hardware::CPU.arm?
       url "https://github.com/fhopfensperger/git-releaser/releases/download/v0.0.99/git-releaser_0.0.99_darwin_arm64.tar.gz"
-      sha256 "b75b49df4fb5e3879cb6f9833b58a5ba74c80553b0a1e4cea7832582d0fab5d4"
+      sha256 "cdda9108394633172d6539bf925bf1da13efb7249fe8c2b717dd6a9cb738e9e0"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
       url "https://github.com/fhopfensperger/git-releaser/releases/download/v0.0.99/git-releaser_0.0.99_linux_amd64.tar.gz"
-      sha256 "d875f8a3f56f9606524bcd0de88f3a076c0ab7bfda1a934c956445a02007c0f7"
+      sha256 "30b4fe8041ae5bba6b79bbb24c2fa2051e6c9abf3fa099092315f9b85b5c5f8c"
     end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
       url "https://github.com/fhopfensperger/git-releaser/releases/download/v0.0.99/git-releaser_0.0.99_linux_armv6.tar.gz"
-      sha256 "953dacc99f099631235f7c61d6da1c74b3cc9a1ccb45df52f3cdf54722a1681e"
+      sha256 "367ec53e5aa214d094c6287331c71f37f2e6edd13ed9ba8c48689c10ca9188fe"
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/fhopfensperger/git-releaser/releases/download/v0.0.99/git-releaser_0.0.99_linux_arm64.tar.gz"
-      sha256 "6f23ca2a9bc66268cbfdd3979c67d8aa29d10969cee3abc98a0c5486f38c25ed"
+      sha256 "c8b37598b3d36c046d7ccb1f92a39242952405016e18739bc986fb50cffb4396"
     end
   end
 
