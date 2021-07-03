@@ -5,33 +5,33 @@
 class GitRemoteCleanup < Formula
   desc "Get and delete no longer needed release branches from a remote repository."
   homepage "https://fhopfensperger.github.io"
-  version "0.3.0"
+  version "0.3.1"
   license "Apache 2.0"
   bottle :unneeded
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/fhopfensperger/git-remote-cleanup/releases/download/v0.3.0/git-remote-cleanup_darwin_amd64.tar.gz"
-      sha256 "dd86d703d54eccf7a7eac64b311c397dffff67ea6102fbd63a0fefce2c43f18f"
+      url "https://github.com/fhopfensperger/git-remote-cleanup/releases/download/v0.3.1/git-remote-cleanup_darwin_amd64.tar.gz"
+      sha256 "1668374b95aeb667bafd9c10f543fa3c12dd8e699b194c91aaae9d999cb803d5"
     end
     if Hardware::CPU.arm?
-      url "https://github.com/fhopfensperger/git-remote-cleanup/releases/download/v0.3.0/git-remote-cleanup_darwin_arm64.tar.gz"
-      sha256 "1f19d8cd60541f46b9096b358f29f0fa4d0cef03da68d3ffc3c039db6506c942"
+      url "https://github.com/fhopfensperger/git-remote-cleanup/releases/download/v0.3.1/git-remote-cleanup_darwin_arm64.tar.gz"
+      sha256 "bd17922385ced6dd13f2e089c66ed59f7567ace0c054aeb68b6fe2cd20546912"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/fhopfensperger/git-remote-cleanup/releases/download/v0.3.0/git-remote-cleanup_linux_amd64.tar.gz"
-      sha256 "9a98cfea226f5f3a087af33ce19f1bd696fa99d3b810c0e61ea5f7a801b2a173"
+      url "https://github.com/fhopfensperger/git-remote-cleanup/releases/download/v0.3.1/git-remote-cleanup_linux_amd64.tar.gz"
+      sha256 "6e7a15afcf44bc01334b09f16adfa8e13b9787203b8efb3ab2f7814b056a3ffb"
     end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/fhopfensperger/git-remote-cleanup/releases/download/v0.3.0/git-remote-cleanup_linux_armv6.tar.gz"
-      sha256 "2f4f4ac60f67295c3380f3b3cb084e6885f3a3cfe37c38e5ab1e84e9a31b36bc"
+      url "https://github.com/fhopfensperger/git-remote-cleanup/releases/download/v0.3.1/git-remote-cleanup_linux_armv6.tar.gz"
+      sha256 "6fbda0ebf64fb71e2dc858feb3cd0bea3478e9510cd2aa7679b28999f6e5f7bf"
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/fhopfensperger/git-remote-cleanup/releases/download/v0.3.0/git-remote-cleanup_linux_arm64.tar.gz"
-      sha256 "46fbbb8f429f0e131cd684dce66d52e48044001541ade2d04e5ceae27fa0bc1f"
+      url "https://github.com/fhopfensperger/git-remote-cleanup/releases/download/v0.3.1/git-remote-cleanup_linux_arm64.tar.gz"
+      sha256 "415afbba199a1edc1c5d8208e61f082d78b94dbe6738b5bcbd358efbaa339dd4"
     end
   end
 
