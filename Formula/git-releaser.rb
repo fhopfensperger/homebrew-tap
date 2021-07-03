@@ -5,33 +5,33 @@
 class GitReleaser < Formula
   desc "Command line tool to create release branches and tags"
   homepage "https://fhopfensperger.github.io"
-  version "0.3.0"
+  version "0.3.1"
   license "Apache 2.0"
   bottle :unneeded
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/fhopfensperger/git-releaser/releases/download/v0.3.0/git-releaser_darwin_amd64.tar.gz"
-      sha256 "31862d8fc710c15d2b8672990e0f74cb5248999f0fd403c5e0173c6e41215ad4"
+      url "https://github.com/fhopfensperger/git-releaser/releases/download/v0.3.1/git-releaser_darwin_amd64.tar.gz"
+      sha256 "9c1383a29c0513570a7309921de0433e2ed59953086512d353602b6ae4c2164e"
     end
     if Hardware::CPU.arm?
-      url "https://github.com/fhopfensperger/git-releaser/releases/download/v0.3.0/git-releaser_darwin_arm64.tar.gz"
-      sha256 "f849726fe6fcc6119538ff191526a12c36bfb4b5b54c479bb2f152078ec9148f"
+      url "https://github.com/fhopfensperger/git-releaser/releases/download/v0.3.1/git-releaser_darwin_arm64.tar.gz"
+      sha256 "1cf3870ee7a890fcbc6d6c09960733c802dce9c795d7a3cb05011312f3af040e"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/fhopfensperger/git-releaser/releases/download/v0.3.0/git-releaser_linux_amd64.tar.gz"
-      sha256 "32dcf2a743087eb0b20e7dd1a1a07ba4263573b79cb500239161b06e27b74710"
+      url "https://github.com/fhopfensperger/git-releaser/releases/download/v0.3.1/git-releaser_linux_amd64.tar.gz"
+      sha256 "7f5331e11ef0ec0acc52e89286ac16ec814978eaee877fc4146abdc4f0aa442f"
     end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/fhopfensperger/git-releaser/releases/download/v0.3.0/git-releaser_linux_armv6.tar.gz"
-      sha256 "d383b92b928b2045b18a4018b3277b7d78c096b08750c064da79b0f9447aa353"
+      url "https://github.com/fhopfensperger/git-releaser/releases/download/v0.3.1/git-releaser_linux_armv6.tar.gz"
+      sha256 "613f032a6f6085270366160eea198d9ef3fc6a526e29666f8fd7958fa0c6690e"
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/fhopfensperger/git-releaser/releases/download/v0.3.0/git-releaser_linux_arm64.tar.gz"
-      sha256 "b88aee0032ecb699d273c6a3d6cebb2001a2f9ba6e76538a4d8bf4e081f5c805"
+      url "https://github.com/fhopfensperger/git-releaser/releases/download/v0.3.1/git-releaser_linux_arm64.tar.gz"
+      sha256 "de17bc86eee444acd838271207abc215730528233896630ac72be919b14c8a55"
     end
   end
 
