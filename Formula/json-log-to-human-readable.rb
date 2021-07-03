@@ -5,33 +5,33 @@
 class JsonLogToHumanReadable < Formula
   desc "Transforms json log into human readable output"
   homepage "https://fhopfensperger.github.io"
-  version "0.2.4"
+  version "0.2.5"
   license "Apache 2.0"
   bottle :unneeded
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/fhopfensperger/json-log-to-human-readable/releases/download/v0.2.4/json-log-to-human-readable_0.2.4_darwin_amd64.tar.gz"
-      sha256 "49e0387437e90abb0ff063d49839053e96e6ac812c47bddd77655cc175f68285"
+      url "https://github.com/fhopfensperger/json-log-to-human-readable/releases/download/v0.2.5/json-log-to-human-readable_0.2.5_darwin_amd64.tar.gz"
+      sha256 "a10f17893d7796563fdb9c65e3bb133e265dd0b16054e58d342b819aeac00924"
     end
     if Hardware::CPU.arm?
-      url "https://github.com/fhopfensperger/json-log-to-human-readable/releases/download/v0.2.4/json-log-to-human-readable_0.2.4_darwin_arm64.tar.gz"
-      sha256 "c53c3cafa379c1789748e99283f0d2731039ee927ba1c04319aa9969ad00c114"
+      url "https://github.com/fhopfensperger/json-log-to-human-readable/releases/download/v0.2.5/json-log-to-human-readable_0.2.5_darwin_arm64.tar.gz"
+      sha256 "752ecfced27cda5baf6862bcebc4519aab27b8bc57cf3cee433293c1c3266666"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/fhopfensperger/json-log-to-human-readable/releases/download/v0.2.4/json-log-to-human-readable_0.2.4_linux_amd64.tar.gz"
-      sha256 "3e71c788d8332eb5d449920cd55b93f24cedf7bedefb8a3c789c033e830c0c71"
+      url "https://github.com/fhopfensperger/json-log-to-human-readable/releases/download/v0.2.5/json-log-to-human-readable_0.2.5_linux_amd64.tar.gz"
+      sha256 "1e05c277fc06361a357a39d4d8670d272be2baca18f868e37d4805a8ac6efd05"
     end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/fhopfensperger/json-log-to-human-readable/releases/download/v0.2.4/json-log-to-human-readable_0.2.4_linux_armv6.tar.gz"
-      sha256 "532bb9a3bd64526e050dc38541a4378bb5732fd8a24995f23ef282eac4241e66"
+      url "https://github.com/fhopfensperger/json-log-to-human-readable/releases/download/v0.2.5/json-log-to-human-readable_0.2.5_linux_armv6.tar.gz"
+      sha256 "747df9e3d649cc53f17cdf2036716e5845902c14f0982ea3b0814c0fed0c0738"
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/fhopfensperger/json-log-to-human-readable/releases/download/v0.2.4/json-log-to-human-readable_0.2.4_linux_arm64.tar.gz"
-      sha256 "724fed082a0dae3fba82ddf693baa97b4963a404f3c5fb2bade79f96ab2701a0"
+      url "https://github.com/fhopfensperger/json-log-to-human-readable/releases/download/v0.2.5/json-log-to-human-readable_0.2.5_linux_arm64.tar.gz"
+      sha256 "ce697b0ce2711c212c9b08538c01af08dd3269c858482cfdd5833073857ba0d7"
     end
   end
 
