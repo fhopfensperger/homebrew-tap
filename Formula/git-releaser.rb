@@ -5,45 +5,72 @@
 class GitReleaser < Formula
   desc "Command line tool to create release branches and tags"
   homepage "https://fhopfensperger.github.io"
-  version "0.3.1"
+  version "0.3.2"
   license "Apache 2.0"
-  bottle :unneeded
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/fhopfensperger/git-releaser/releases/download/v0.3.1/git-releaser_darwin_amd64.tar.gz"
-      sha256 "9c1383a29c0513570a7309921de0433e2ed59953086512d353602b6ae4c2164e"
+      url "https://github.com/fhopfensperger/git-releaser/releases/download/v0.3.2/git-releaser_darwin_amd64.tar.gz"
+      sha256 "d4a84f0cce467a5895615e47d1589abf0d915ec52ca7e5e04fc8b263fcf68b5c"
+
+      def install
+        bin.install "git-releaser"
+        bash_completion.install "completions/git-releaser.bash" => "git-releaser"
+        zsh_completion.install "completions/git-releaser.zsh" => "_git-releaser"
+        fish_completion.install "completions/git-releaser.fish"
+      end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/fhopfensperger/git-releaser/releases/download/v0.3.1/git-releaser_darwin_arm64.tar.gz"
-      sha256 "1cf3870ee7a890fcbc6d6c09960733c802dce9c795d7a3cb05011312f3af040e"
+      url "https://github.com/fhopfensperger/git-releaser/releases/download/v0.3.2/git-releaser_darwin_arm64.tar.gz"
+      sha256 "3d166ae639125024176446de05f2537b58a58553bb266e6e744a7b9af475da90"
+
+      def install
+        bin.install "git-releaser"
+        bash_completion.install "completions/git-releaser.bash" => "git-releaser"
+        zsh_completion.install "completions/git-releaser.zsh" => "_git-releaser"
+        fish_completion.install "completions/git-releaser.fish"
+      end
     end
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/fhopfensperger/git-releaser/releases/download/v0.3.1/git-releaser_linux_amd64.tar.gz"
-      sha256 "7f5331e11ef0ec0acc52e89286ac16ec814978eaee877fc4146abdc4f0aa442f"
-    end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/fhopfensperger/git-releaser/releases/download/v0.3.1/git-releaser_linux_armv6.tar.gz"
-      sha256 "613f032a6f6085270366160eea198d9ef3fc6a526e29666f8fd7958fa0c6690e"
+      url "https://github.com/fhopfensperger/git-releaser/releases/download/v0.3.2/git-releaser_linux_armv6.tar.gz"
+      sha256 "8d12afc4f19574c5c31587932bf68929b55167f9a53e7454336c0131f8ede148"
+
+      def install
+        bin.install "git-releaser"
+        bash_completion.install "completions/git-releaser.bash" => "git-releaser"
+        zsh_completion.install "completions/git-releaser.zsh" => "_git-releaser"
+        fish_completion.install "completions/git-releaser.fish"
+      end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/fhopfensperger/git-releaser/releases/download/v0.3.1/git-releaser_linux_arm64.tar.gz"
-      sha256 "de17bc86eee444acd838271207abc215730528233896630ac72be919b14c8a55"
+      url "https://github.com/fhopfensperger/git-releaser/releases/download/v0.3.2/git-releaser_linux_arm64.tar.gz"
+      sha256 "4dbed348e306b424404cae2a017a4abe3ac3c70380c41398b84c51e6b079e7f7"
+
+      def install
+        bin.install "git-releaser"
+        bash_completion.install "completions/git-releaser.bash" => "git-releaser"
+        zsh_completion.install "completions/git-releaser.zsh" => "_git-releaser"
+        fish_completion.install "completions/git-releaser.fish"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/fhopfensperger/git-releaser/releases/download/v0.3.2/git-releaser_linux_amd64.tar.gz"
+      sha256 "c86b8b3120d7e84bab7d6446d882caa292f0ad38d5274de61492e9f30ab4e8b9"
+
+      def install
+        bin.install "git-releaser"
+        bash_completion.install "completions/git-releaser.bash" => "git-releaser"
+        zsh_completion.install "completions/git-releaser.zsh" => "_git-releaser"
+        fish_completion.install "completions/git-releaser.fish"
+      end
     end
   end
 
   depends_on "go" => :optional
   depends_on "git" => :optional
-
-  def install
-    bin.install "git-releaser"
-    bash_completion.install "completions/git-releaser.bash" => "git-releaser"
-    zsh_completion.install "completions/git-releaser.zsh" => "_git-releaser"
-    fish_completion.install "completions/git-releaser.fish"
-  end
 
   test do
     system "#{bin}/git-releaser -v"
