@@ -5,13 +5,13 @@
 class GitRemoteCleanup < Formula
   desc "Get and delete no longer needed release branches from a remote repository."
   homepage "https://fhopfensperger.github.io"
-  version "0.3.4"
+  version "0.3.5"
   license "Apache 2.0"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/fhopfensperger/git-remote-cleanup/releases/download/v0.3.4/git-remote-cleanup_darwin_arm64.tar.gz"
-      sha256 "304ed7c1b0199784aca9e32537f275aeada1d49fbc179c73e278bb5e41c3bfec"
+      url "https://github.com/fhopfensperger/git-remote-cleanup/releases/download/v0.3.5/git-remote-cleanup_darwin_arm64.tar.gz"
+      sha256 "540953064e4cf810d11817fa5d97858017f969c1064bf6ee6e3ef45df98c5e59"
 
       def install
         bin.install "git-remote-cleanup"
@@ -21,8 +21,8 @@ class GitRemoteCleanup < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/fhopfensperger/git-remote-cleanup/releases/download/v0.3.4/git-remote-cleanup_darwin_amd64.tar.gz"
-      sha256 "bfd545f0847b418c6d3d90d122efa939bc465dcf2fbd0206795e0dd6f2d109b0"
+      url "https://github.com/fhopfensperger/git-remote-cleanup/releases/download/v0.3.5/git-remote-cleanup_darwin_amd64.tar.gz"
+      sha256 "5e573ab3d40863728de00dbf4e146874cab81d09fa9dd7404a630a533a56f4c1"
 
       def install
         bin.install "git-remote-cleanup"
@@ -34,9 +34,20 @@ class GitRemoteCleanup < Formula
   end
 
   on_linux do
+    if Hardware::CPU.intel?
+      url "https://github.com/fhopfensperger/git-remote-cleanup/releases/download/v0.3.5/git-remote-cleanup_linux_amd64.tar.gz"
+      sha256 "3fc1d1211abbd3739ecbb38b996b4b88c277d04cd4fd8507cba7e3559220a004"
+
+      def install
+        bin.install "git-remote-cleanup"
+        bash_completion.install "completions/git-remote-cleanup.bash" => "git-remote-cleanup"
+        zsh_completion.install "completions/git-remote-cleanup.zsh" => "_git-remote-cleanup"
+        fish_completion.install "completions/git-remote-cleanup.fish"
+      end
+    end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/fhopfensperger/git-remote-cleanup/releases/download/v0.3.4/git-remote-cleanup_linux_armv6.tar.gz"
-      sha256 "42e441bd79d6645c11cb57dc493ad6f4b6e97dc537212640ece32f05a35f7f09"
+      url "https://github.com/fhopfensperger/git-remote-cleanup/releases/download/v0.3.5/git-remote-cleanup_linux_armv6.tar.gz"
+      sha256 "925b3f03a9ff6590381ecca2bb2882ad38fcc36d46282ae17620445779710085"
 
       def install
         bin.install "git-remote-cleanup"
@@ -46,19 +57,8 @@ class GitRemoteCleanup < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/fhopfensperger/git-remote-cleanup/releases/download/v0.3.4/git-remote-cleanup_linux_arm64.tar.gz"
-      sha256 "80456b28104946bf74f95c0ab307b122757995db23270eff5ca0e7e08f5a2ee4"
-
-      def install
-        bin.install "git-remote-cleanup"
-        bash_completion.install "completions/git-remote-cleanup.bash" => "git-remote-cleanup"
-        zsh_completion.install "completions/git-remote-cleanup.zsh" => "_git-remote-cleanup"
-        fish_completion.install "completions/git-remote-cleanup.fish"
-      end
-    end
-    if Hardware::CPU.intel?
-      url "https://github.com/fhopfensperger/git-remote-cleanup/releases/download/v0.3.4/git-remote-cleanup_linux_amd64.tar.gz"
-      sha256 "86e58ac8155e72e518e45060c9a35e6a2ef185e79b6c380fed7bd939a8c821c7"
+      url "https://github.com/fhopfensperger/git-remote-cleanup/releases/download/v0.3.5/git-remote-cleanup_linux_arm64.tar.gz"
+      sha256 "736b70b138ecbc8fe9e66ba17fe51a2b2ceda01358673def54f1a76f435a7ed7"
 
       def install
         bin.install "git-remote-cleanup"
