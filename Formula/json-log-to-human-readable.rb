@@ -5,21 +5,24 @@
 class JsonLogToHumanReadable < Formula
   desc "Transforms json log into human readable output"
   homepage "https://fhopfensperger.github.io"
-  version "0.2.8"
+  version "0.2.9"
   license "Apache 2.0"
 
+  depends_on "go" => :optional
+  depends_on "git" => :optional
+
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/fhopfensperger/json-log-to-human-readable/releases/download/v0.2.8/json-log-to-human-readable_0.2.8_darwin_amd64.tar.gz"
-      sha256 "ea3c53cf14f682082e22beda1821f53bfdd6bdebdb8644653b222e5c7d91c8d4"
+    if Hardware::CPU.arm?
+      url "https://github.com/fhopfensperger/json-log-to-human-readable/releases/download/v0.2.9/json-log-to-human-readable_0.2.9_darwin_arm64.tar.gz"
+      sha256 "fd3dfe33a2425838ca1b877b5b05db5343ed25210c7c94d5b991a15b1f4c12e4"
 
       def install
         bin.install "json-log-to-human-readable"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/fhopfensperger/json-log-to-human-readable/releases/download/v0.2.8/json-log-to-human-readable_0.2.8_darwin_arm64.tar.gz"
-      sha256 "64948351ce656c45529acb8551b1997195ea6a78cc65b9aa313297960b4d4b51"
+    if Hardware::CPU.intel?
+      url "https://github.com/fhopfensperger/json-log-to-human-readable/releases/download/v0.2.9/json-log-to-human-readable_0.2.9_darwin_amd64.tar.gz"
+      sha256 "25527f18deaaffcc105207657b9c7f3dd57673accbd30138efc6c723113cbb47"
 
       def install
         bin.install "json-log-to-human-readable"
@@ -29,33 +32,30 @@ class JsonLogToHumanReadable < Formula
 
   on_linux do
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/fhopfensperger/json-log-to-human-readable/releases/download/v0.2.8/json-log-to-human-readable_0.2.8_linux_armv6.tar.gz"
-      sha256 "829152c3265fa5e8a126ccfee2011b18a1a1dc5f2e8687b6c334ef7c0dd0f068"
+      url "https://github.com/fhopfensperger/json-log-to-human-readable/releases/download/v0.2.9/json-log-to-human-readable_0.2.9_linux_armv6.tar.gz"
+      sha256 "1eb64ec5261ff6f0dbb1561241eaa67fac71625ee3193711377e90f54e0c99fd"
 
       def install
         bin.install "json-log-to-human-readable"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/fhopfensperger/json-log-to-human-readable/releases/download/v0.2.8/json-log-to-human-readable_0.2.8_linux_amd64.tar.gz"
-      sha256 "f4485b382cb6fce62972783dc39328e9290399ff1eeab69d62b86fa6bf7e31ac"
+      url "https://github.com/fhopfensperger/json-log-to-human-readable/releases/download/v0.2.9/json-log-to-human-readable_0.2.9_linux_amd64.tar.gz"
+      sha256 "527904136a6eff43e1abd4b51494200a0bb07d48f844fd5053232330b99805ca"
 
       def install
         bin.install "json-log-to-human-readable"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/fhopfensperger/json-log-to-human-readable/releases/download/v0.2.8/json-log-to-human-readable_0.2.8_linux_arm64.tar.gz"
-      sha256 "2ed2740e02468c203c484c8a70a3ab6f19accb01ec8b4c0ff7bbddff6e167944"
+      url "https://github.com/fhopfensperger/json-log-to-human-readable/releases/download/v0.2.9/json-log-to-human-readable_0.2.9_linux_arm64.tar.gz"
+      sha256 "f9ecb90149335a7bcef04bc10ec648f629b79a5ec0a57be38c198fbc637b01e4"
 
       def install
         bin.install "json-log-to-human-readable"
       end
     end
   end
-
-  depends_on "go" => :optional
-  depends_on "git" => :optional
 
   test do
     system "#{bin}/json-log-to-human-readable -v"
