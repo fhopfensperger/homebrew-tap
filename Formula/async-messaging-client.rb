@@ -5,13 +5,16 @@
 class AsyncMessagingClient < Formula
   desc "Sends and receives messages in an asynchronous way to or from different Cloud messaging services."
   homepage "https://fhopfensperger.github.io"
-  version "0.2.5"
+  version "0.2.6"
   license "Apache 2.0"
+
+  depends_on "go" => :optional
+  depends_on "git" => :optional
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/fhopfensperger/async-messaging-client/releases/download/v0.2.5/async-messaging-client_darwin_amd64.tar.gz"
-      sha256 "13aa2c66fa30fb5b731ad54d3ad27fb4f61bed6bb21d73ad177d2d4b3fb1f1f4"
+      url "https://github.com/fhopfensperger/async-messaging-client/releases/download/v0.2.6/async-messaging-client_darwin_amd64.tar.gz"
+      sha256 "c934e91a75205353af2af074e05d787b3ee293bf98588ea92056c5f8760a350a"
 
       def install
         bin.install "async-messaging-client"
@@ -21,8 +24,8 @@ class AsyncMessagingClient < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/fhopfensperger/async-messaging-client/releases/download/v0.2.5/async-messaging-client_darwin_arm64.tar.gz"
-      sha256 "ee2e65a621687e64ac3cc79f8e1c996544528e24cfe6c87522791799702fd312"
+      url "https://github.com/fhopfensperger/async-messaging-client/releases/download/v0.2.6/async-messaging-client_darwin_arm64.tar.gz"
+      sha256 "4f65de8f6fb2b67debf4cb40371a3cd0a6b388a3da7c18c8bf4bdf9b3efeb226"
 
       def install
         bin.install "async-messaging-client"
@@ -35,19 +38,8 @@ class AsyncMessagingClient < Formula
 
   on_linux do
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/fhopfensperger/async-messaging-client/releases/download/v0.2.5/async-messaging-client_linux_armv6.tar.gz"
-      sha256 "65fdde6c3839b2960e0b9af23209b2e6b861fa814ecd54be6b0e7f30dcd8e204"
-
-      def install
-        bin.install "async-messaging-client"
-        bash_completion.install "completions/async-messaging-client.bash" => "async-messaging-client"
-        zsh_completion.install "completions/async-messaging-client.zsh" => "_async-messaging-client"
-        fish_completion.install "completions/async-messaging-client.fish"
-      end
-    end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/fhopfensperger/async-messaging-client/releases/download/v0.2.5/async-messaging-client_linux_arm64.tar.gz"
-      sha256 "dd4fc30cbf5eaccec73c352b4a67c9336212118fd6312ebeaed654234d4020ca"
+      url "https://github.com/fhopfensperger/async-messaging-client/releases/download/v0.2.6/async-messaging-client_linux_armv6.tar.gz"
+      sha256 "23df57f07d597e9adf9783e0754c19d3c5de852eb69fda8e2cef4e60471aacf6"
 
       def install
         bin.install "async-messaging-client"
@@ -57,8 +49,19 @@ class AsyncMessagingClient < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/fhopfensperger/async-messaging-client/releases/download/v0.2.5/async-messaging-client_linux_amd64.tar.gz"
-      sha256 "e0486e5f0f98b1586ad73b3b9c26df52772c1c5f9a64ece7221095d79055cbb8"
+      url "https://github.com/fhopfensperger/async-messaging-client/releases/download/v0.2.6/async-messaging-client_linux_amd64.tar.gz"
+      sha256 "06b8a9ce71857f7623119a6ddaef6dabf6e72e3d11a056429a913bedf2aff20c"
+
+      def install
+        bin.install "async-messaging-client"
+        bash_completion.install "completions/async-messaging-client.bash" => "async-messaging-client"
+        zsh_completion.install "completions/async-messaging-client.zsh" => "_async-messaging-client"
+        fish_completion.install "completions/async-messaging-client.fish"
+      end
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/fhopfensperger/async-messaging-client/releases/download/v0.2.6/async-messaging-client_linux_arm64.tar.gz"
+      sha256 "2f9fd5cf01f7671f43f385a2323feb7f86a0bf7182bac4b74febaf73e13570f6"
 
       def install
         bin.install "async-messaging-client"
@@ -68,9 +71,6 @@ class AsyncMessagingClient < Formula
       end
     end
   end
-
-  depends_on "go" => :optional
-  depends_on "git" => :optional
 
   test do
     system "#{bin}/async-messaging-client -v"
