@@ -5,7 +5,7 @@
 class AsyncMessagingClient < Formula
   desc "Sends and receives messages in an asynchronous way to or from different Cloud messaging services."
   homepage "https://fhopfensperger.github.io"
-  version "0.2.6"
+  version "0.2.7"
   license "Apache 2.0"
 
   depends_on "go" => :optional
@@ -13,8 +13,8 @@ class AsyncMessagingClient < Formula
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/fhopfensperger/async-messaging-client/releases/download/v0.2.6/async-messaging-client_darwin_amd64.tar.gz"
-      sha256 "c934e91a75205353af2af074e05d787b3ee293bf98588ea92056c5f8760a350a"
+      url "https://github.com/fhopfensperger/async-messaging-client/releases/download/v0.2.7/async-messaging-client_darwin_amd64.tar.gz"
+      sha256 "d134137612bbd24ce4e9a3cb433cd9538501b90b927f508a50620aa4db2629c7"
 
       def install
         bin.install "async-messaging-client"
@@ -24,8 +24,8 @@ class AsyncMessagingClient < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/fhopfensperger/async-messaging-client/releases/download/v0.2.6/async-messaging-client_darwin_arm64.tar.gz"
-      sha256 "4f65de8f6fb2b67debf4cb40371a3cd0a6b388a3da7c18c8bf4bdf9b3efeb226"
+      url "https://github.com/fhopfensperger/async-messaging-client/releases/download/v0.2.7/async-messaging-client_darwin_arm64.tar.gz"
+      sha256 "2fcdeff2dc99eea7483df298a69a6e44804d7b76b004bb1862f77ed414660a4b"
 
       def install
         bin.install "async-messaging-client"
@@ -38,8 +38,8 @@ class AsyncMessagingClient < Formula
 
   on_linux do
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/fhopfensperger/async-messaging-client/releases/download/v0.2.6/async-messaging-client_linux_armv6.tar.gz"
-      sha256 "23df57f07d597e9adf9783e0754c19d3c5de852eb69fda8e2cef4e60471aacf6"
+      url "https://github.com/fhopfensperger/async-messaging-client/releases/download/v0.2.7/async-messaging-client_linux_armv6.tar.gz"
+      sha256 "97b94ed469f0a2d16f175ba5b8fa26427a0d7053513895891fcdb2bbf9a01865"
 
       def install
         bin.install "async-messaging-client"
@@ -49,8 +49,8 @@ class AsyncMessagingClient < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/fhopfensperger/async-messaging-client/releases/download/v0.2.6/async-messaging-client_linux_amd64.tar.gz"
-      sha256 "06b8a9ce71857f7623119a6ddaef6dabf6e72e3d11a056429a913bedf2aff20c"
+      url "https://github.com/fhopfensperger/async-messaging-client/releases/download/v0.2.7/async-messaging-client_linux_amd64.tar.gz"
+      sha256 "b0e240e627410e07baabeb7410aed75f42e7a4e8551f68d8e1312b0ad8d24219"
 
       def install
         bin.install "async-messaging-client"
@@ -60,8 +60,8 @@ class AsyncMessagingClient < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/fhopfensperger/async-messaging-client/releases/download/v0.2.6/async-messaging-client_linux_arm64.tar.gz"
-      sha256 "2f9fd5cf01f7671f43f385a2323feb7f86a0bf7182bac4b74febaf73e13570f6"
+      url "https://github.com/fhopfensperger/async-messaging-client/releases/download/v0.2.7/async-messaging-client_linux_arm64.tar.gz"
+      sha256 "b71d27764795018dbb633f0ab6c568a866a84ee56e00c1b1d501678123e4b87c"
 
       def install
         bin.install "async-messaging-client"
