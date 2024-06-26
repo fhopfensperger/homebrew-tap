@@ -5,24 +5,24 @@
 class JsonLogToHumanReadable < Formula
   desc "Transforms json log into human readable output"
   homepage "https://fhopfensperger.github.io"
-  version "0.2.12"
+  version "0.2.13"
   license "Apache 2.0"
 
   depends_on "git" => :optional
   depends_on "go" => :optional
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/fhopfensperger/json-log-to-human-readable/releases/download/v0.2.12/json-log-to-human-readable_0.2.12_darwin_amd64.tar.gz"
-      sha256 "888e4e06bf098411b772250a2627590c24cd54af4344e58f9d1790f47b62a40a"
+    on_intel do
+      url "https://github.com/fhopfensperger/json-log-to-human-readable/releases/download/v0.2.13/json-log-to-human-readable_0.2.13_darwin_amd64.tar.gz"
+      sha256 "d211c7e3aa6d26370c28914dc170f1237ceb75c3524a6541747c5054f09c48f6"
 
       def install
         bin.install "json-log-to-human-readable"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/fhopfensperger/json-log-to-human-readable/releases/download/v0.2.12/json-log-to-human-readable_0.2.12_darwin_arm64.tar.gz"
-      sha256 "783b69704c9653bc50d641ee172b50d5798f23d094fe6294949294cc60fac8e2"
+    on_arm do
+      url "https://github.com/fhopfensperger/json-log-to-human-readable/releases/download/v0.2.13/json-log-to-human-readable_0.2.13_darwin_arm64.tar.gz"
+      sha256 "f0f2e6825396dd12a71d0e839905735b0a0168ff494803c6887ea89d32c08648"
 
       def install
         bin.install "json-log-to-human-readable"
@@ -31,28 +31,34 @@ class JsonLogToHumanReadable < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/fhopfensperger/json-log-to-human-readable/releases/download/v0.2.12/json-log-to-human-readable_0.2.12_linux_armv6.tar.gz"
-      sha256 "1dba474fa53f152ad6062fa68e347b7724ddc994bc2d156a23b04f33163a1948"
+    on_intel do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/fhopfensperger/json-log-to-human-readable/releases/download/v0.2.13/json-log-to-human-readable_0.2.13_linux_amd64.tar.gz"
+        sha256 "00f5a3a6cef1a2dfdaca4a4ec499d7cdbedc42c99a9f8a1347c3f1f7ee30339d"
 
-      def install
-        bin.install "json-log-to-human-readable"
+        def install
+          bin.install "json-log-to-human-readable"
+        end
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/fhopfensperger/json-log-to-human-readable/releases/download/v0.2.12/json-log-to-human-readable_0.2.12_linux_amd64.tar.gz"
-      sha256 "0d6226e3801ed2ba17d42a5529ab96b77ceef9a09bf9189c0a133b5047c37c4f"
+    on_arm do
+      if !Hardware::CPU.is_64_bit?
+        url "https://github.com/fhopfensperger/json-log-to-human-readable/releases/download/v0.2.13/json-log-to-human-readable_0.2.13_linux_armv6.tar.gz"
+        sha256 "b3444a9bf90d8ac10116fe8b86da6fe8fd176402aab0bdce38859b14891091bb"
 
-      def install
-        bin.install "json-log-to-human-readable"
+        def install
+          bin.install "json-log-to-human-readable"
+        end
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/fhopfensperger/json-log-to-human-readable/releases/download/v0.2.12/json-log-to-human-readable_0.2.12_linux_arm64.tar.gz"
-      sha256 "0f97d06465274477dcdd34027d1e6e95c691243bdef0e77deabe454829486a1c"
+    on_arm do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/fhopfensperger/json-log-to-human-readable/releases/download/v0.2.13/json-log-to-human-readable_0.2.13_linux_arm64.tar.gz"
+        sha256 "a252a2f977f4a64a0fcec67f4205c51e77dc22afb8a0f0fce76c2fb35f16c43c"
 
-      def install
-        bin.install "json-log-to-human-readable"
+        def install
+          bin.install "json-log-to-human-readable"
+        end
       end
     end
   end
